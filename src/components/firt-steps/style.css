@@ -1,0 +1,46 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .guide{
+    margin-left: 60px;
+    width: 80vh;
+    height: 400px;
+}
+
+.container .guide .view_level_steps{
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.container .guide .skip_button{
+    height: 60px;
+}
+
+.container .guide .skip_button .skip{
+    float: right;
+    cursor: pointer;
+}
+
+.container .guide .text_step{
+    text-align: center;
+    font-size: 25px;
+}
+
+.container .guide .tips p{
+    color: #6C63FF;
+    font-size: 18px;
+}
+
+.next {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
