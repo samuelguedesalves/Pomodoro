@@ -140,9 +140,10 @@ function Application ({ showSprintHappyBanner }) {
                         >Reset < Icon.RefreshCcw style={{marginLeft: 10}} /> </button>
 
                     </div>
-
-                    <div className="ads" id="purpleads-client" >
+                    {/**
+                    <div className="ads" >
                     </div>
+                     */}
 
                 </div>
 
