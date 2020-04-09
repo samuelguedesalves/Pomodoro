@@ -141,10 +141,7 @@ function Application ({ showSprintHappyBanner }) {
 
                     </div>
 
-                    <div className="ads">
-                        <h6>
-                            ADS
-                        </h6>
+                    <div className="ads" id="purpleads-client" >
                     </div>
 
                 </div>
