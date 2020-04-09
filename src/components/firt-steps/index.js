@@ -80,12 +80,12 @@ function FirstSteps () {
                                     Agora com tudo organizado é hora de
                                     colocar a mão na massa, se concentre
                                     e faça sua tarefa durante os proximos
-                                    30 minutos.
+                                    25 minutos.
                                 `
                             :
                                 `
                                 A hora do descanso chegou!
-                                após os 30 minutos trabalhados você
+                                após os 25 minutos trabalhados você
                                 pode pausar durante os proximos 5 minutos, perfeito para um café.
                                 `
                             
@@ -100,7 +100,7 @@ function FirstSteps () {
                         :
                             step === 1?
                                 `
-                                    Importante: Tente terminar sua tarefa dentros dos 30 minutos.
+                                    Importante: Tente terminar sua tarefa dentros dos 25 minutos.
                                 `
                             :
                                 `

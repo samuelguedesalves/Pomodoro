@@ -8,11 +8,16 @@
 }
 
 .App{
-  padding: 40px;
+  padding: 5vh;
 }
 
 .header{
   width: 100%;
+  margin-bottom: 5vh;
+}
+
+.header img{
+  width: 40vh;
 }
 
 .button{
@@ -28,4 +33,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.happyContainer{
+  position: fixed;
+  /*transform: translateX(-6vh) translateY(-16.5vh);*/
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(86, 86, 86, 0.5);
+}
+
+.happyContainer .center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
 }

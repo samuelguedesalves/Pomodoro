@@ -1,38 +1,29 @@
 import React, { useEffect, useState } from 'react';
 
-import { useSpring, animated } from 'react-spring';
-
 //icons
 import * as Icon from 'react-feather';
 
 import './style.css';
 
-import happyImg from '../../assets/happy.png';
-
-function Application () {
-
+function Application ({ showSprintHappyBanner }) {
     const [minute, setMinute] = useState(0);
     const [seconds, setSeconds] = useState(0);
     const [state, setState] = useState(false);
     const [strokeOffset, setStrokeOffset] = useState(1500);
     const [clean,setClean] = useState(false);
 
-    const [sprintHappy, setSprintHappy] = useState(false);
-
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
-
     useEffect(()=>{
         if(state === true){
             if( seconds <= 60){
                 setTimeout(()=>{
                     setSeconds( seconds + 1 );
-
                     setStrokeOffset( strokeOffset - 1.13 );
                 }, 1000);
             }else{
                 if( minute === 24 ){
                     setState(false);
-                    setSprintHappy(true);
+                    showSprintHappyBanner(true);
+                    resetTimer();
                 }
                 setMinute(minute + 1);
                 setSeconds(0);
@@ -57,33 +48,19 @@ function Application () {
         return length;
     }
 
+    //this function pause time
     function pauseTimer () {
         setState(false);
     }
 
+    //this function is responsible to clean timer
     function resetTimer() {
         setState(false);
         setClean(true);
-        
-        /*
-        setMinute(0);
-        setSeconds(0);
-        setStrokeOffset(1500);
-        */
     }
 
     return (
         <>
-            { sprintHappy ?
-                <animated.div style={props} className="happyContainer" >
-                    <div className="center">
-                        <img src={happyImg} alt=""/>
-                    </div>
-                </animated.div>
-                : 
-                <></>
-            }
-
             <div className="application">
                 <div className="timer">
                     <svg width="300" height="300" className="canvasCircle" >
@@ -166,7 +143,7 @@ function Application () {
 
                     <div className="ads">
                         <h6>
-                            Carbon ADS
+                            ADS
                         </h6>
                     </div>
 

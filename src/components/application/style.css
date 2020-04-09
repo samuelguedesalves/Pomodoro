@@ -17,26 +17,10 @@
     margin-right: 100px;
 }
 
-.happyContainer{
-    position: fixed;
-    transform: translateX(-6vh) translateY(-16.5vh);
-    z-index: 1;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(86, 86, 86, 0.5);
-}
-
-.happyContainer .center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-}
-
 
 .canvasCircle{
     position: fixed;
-    z-index: 1;
+    z-index: 0;
 }
 
 .circle{
@@ -108,4 +92,6 @@
     margin-top: 20px;
     height: 60px;
     background-color: #eee;
+    font-size: 24px;
+    border: 4px dashed #adadad ;
 }

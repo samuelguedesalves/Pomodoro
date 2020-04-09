@@ -1,7 +1,5 @@
-import React from 'react';
-
+import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
-
 import { useSpring, animated } from 'react-spring';
 
 //Icons components
@@ -14,10 +12,10 @@ import './style.css';
 import FocusedWork from '../../assets/focused_working.png';
 
 function Welcome (){
-    const history = useHistory();
-
+    
     const props = useSpring({opacity: 1, from: {opacity: 0}});
-
+    const history = useHistory();
+    
     function goToSteps(){
         history.push('/steps');
     }
