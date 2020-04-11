@@ -9,9 +9,9 @@ import * as Icon from 'react-feather';
 import './style.css';
 
 //vector image
-import FocusedWork from '../../assets/focused_working.png';
+//import FocusedWork from '../../assets/focused_working.png';
 
-function Welcome (){
+function Welcome ({ FocusedWork }){
     
     const props = useSpring({opacity: 1, from: {opacity: 0}});
     const history = useHistory();

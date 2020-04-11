@@ -76,7 +76,7 @@
 
 .application .panel .controllers{
     margin-top: 20px;
-    padding: 20px;
+    padding: 30px;
     width: 300px;
     border-radius: 5px;
     background-color: #eee;
@@ -93,5 +93,6 @@
     height: 60px;
     background-color: #eee;
     font-size: 24px;
-    border: 4px dashed #adadad ;
+    border: 4px dashed #cecece ;
+    color: #cecece ;
 }

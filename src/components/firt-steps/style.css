@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.container .image-slide{
+    width: 70vh;
+}
+
 .container .guide{
     margin-left: 60px;
     width: 80vh;
@@ -12,11 +16,15 @@
 }
 
 .container .guide .view_level_steps{
-    width: 450px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-bottom: 40px;
+}
+
+.container .guide .view_level_steps img{
+    width: 80%;
 }
 
 .container .guide .skip_button{
@@ -26,16 +34,17 @@
 .container .guide .skip_button .skip{
     float: right;
     cursor: pointer;
+    font-size: 2.4vh;
 }
 
 .container .guide .text_step{
     text-align: center;
-    font-size: 25px;
+    font-size: 3.5vh;
 }
 
 .container .guide .tips p{
     color: #6C63FF;
-    font-size: 18px;
+    font-size: 2.8vh;
 }
 
 .next {

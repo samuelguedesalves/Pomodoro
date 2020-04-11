@@ -1,17 +1,44 @@
+//-----------------MODULES DEPENDENCES-----------------------------------------
 import React, {useState} from 'react';
+
 import { useSpring, animated } from 'react-spring';
-import { BrowserRouter as Router, Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
+
+import { 
+    BrowserRouter as Router, 
+    Switch, 
+    Route, 
+    BrowserRouter, 
+    Redirect,
+    useHistory
+} from 'react-router-dom';
 
 
-import Logo from './assets/logo.svg';
+//------------------CSS IMPORTS------------------------------------------------
 import './App.css';
 
 
+
+//------------------IMPORT COMPONENTS------------------------------------------
+//welcome component
 import Welcome from './components/welcome/index';
+
+//Steps componet
 import FirstSteps from './components/firt-steps/index';
+
+//Aplication component
 import Application from './components/application/index';
 
+
+//------------------IMAGE IMPORTS----------------------------------------------
+import Logo from './assets/logo.svg';
 import happyImg from './assets/happy.png';
+
+import FocusedWork from './assets/focused_working.png';
+
+import UndrawTask from './assets/undraw_task.png';
+import OfficeWork from './assets/office_work.png';
+import DrinkCoffee from './assets/drinkACoffee.png';
+
 
 function App () {
     const props = useSpring({opacity: 1, from: {opacity: 0}});
@@ -23,8 +50,13 @@ function App () {
     }
 
     return (<>
+        
         { sprintHappy ? 
-            <animated.div style={props} className="happyContainer" onClick={() => showSprintHappyBanner(false)} >
+            <animated.div 
+                style={props} 
+                className="happyContainer" 
+                onClick={() => showSprintHappyBanner(false)} 
+            >
                 <div className="center">
                     <img src={happyImg} alt=""/>
                 </div>
@@ -32,9 +64,9 @@ function App () {
             : 
             <></>
         }
-        <div className="App">
+        <div className="App" >
 
-            <div className="header">
+            <div className="header" >
                 <img src={Logo} alt="Pomodoro"/>
             </div>
 
@@ -47,8 +79,17 @@ function App () {
             <div className="applicationContainer" >
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path='/' component={Welcome} />
-                        <Route path='/steps' component={FirstSteps} />
+                        <Route exact path='/'>
+                            <Welcome FocusedWork={FocusedWork} />
+                        </Route>
+
+                        <Route path='/steps'>
+                            <FirstSteps 
+                                UndrawTask={UndrawTask} 
+                                OfficeWork={OfficeWork}
+                                DrinkCoffee={DrinkCoffee}
+                            />
+                        </Route>
                         
                         <Route path='/app'>
                             <Application showSprintHappyBanner={showSprintHappyBanner} />

@@ -129,7 +129,6 @@ function Application ({ showSprintHappyBanner }) {
                                 borderWidth : 4,
                                 borderColor: '#727272',
                                 color: '#727272',
-                                marginBottom: 20, 
                                 pointerEvents: "none",
                                 cursor: "not-allowed",
                             } : {
@@ -140,10 +139,10 @@ function Application ({ showSprintHappyBanner }) {
                         >Reset < Icon.RefreshCcw style={{marginLeft: 10}} /> </button>
 
                     </div>
-                    {/**
+
                     <div className="ads" >
+                        <h5>ADS</h5>
                     </div>
-                     */}
 
                 </div>
 

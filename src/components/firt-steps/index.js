@@ -10,15 +10,15 @@ import * as Icon from 'react-feather';
 //css component
 import './style.css';
 
-import UndrawTask from '../../assets/undraw_task.png';
-import OfficeWork from '../../assets/office_work.png';
-import DrinkCoffee from '../../assets/drinkACoffee.png';
+//import UndrawTask from '../../assets/undraw_task.png';
+//import OfficeWork from '../../assets/office_work.png';
+//import DrinkCoffee from '../../assets/drinkACoffee.png';
 
 import LevelSteps from '../../assets/level_steps.svg';
 import LevelSteps1 from '../../assets/level_steps_1.svg';
 import LevelSteps2 from '../../assets/level_steps_2.svg';
 
-function FirstSteps () {
+function FirstSteps ({ UndrawTask, OfficeWork, DrinkCoffee }) {
     const [step, setStep] = useState(0);
 
     //React Spring
@@ -38,12 +38,12 @@ function FirstSteps () {
         <div className="container">
 
             {step=== 0?
-                    <animated.img style={props} src={UndrawTask} alt="Undraw Task"/>
+                    <animated.img className="image-slide" style={props} src={UndrawTask} alt="Undraw Task"/>
             :
                 step=== 1? 
-                    <animated.img style={props} src={OfficeWork} alt="Office Work"/>
+                    <animated.img className="image-slide" style={props} src={OfficeWork} alt="Office Work"/>
                 :
-                    <animated.img style={props} src={DrinkCoffee} alt="Drink a Coffee"/>
+                    <animated.img className="image-slide" style={props} src={DrinkCoffee} alt="Drink a Coffee"/>
             }
 
             <div className="guide">
@@ -111,17 +111,81 @@ function FirstSteps () {
                 </div>
                 <div className="next">
                     {step === 0?
-                        <button className='button' style={{width:240, backgroundColor: '#6C63FF', borderColor: '#6C63FF', outlineColor: '#6C63FF', marginTop:20 }} onClick={ () => skipNextStep(1) } > Proximo passo <Icon.ArrowRightCircle style={{marginLeft: 10}} /> </button>
+                        <button 
+                            className='button' 
+                            style={{
+                                width:240, 
+                                backgroundColor: '#6C63FF', 
+                                borderColor: '#6C63FF', 
+                                outlineColor: '#6C63FF', 
+                                marginTop:20 }} 
+                            onClick={ () => skipNextStep(1) } 
+                        > 
+                            Proximo passo 
+                            <Icon.ArrowRightCircle size="4vh" style={{marginLeft: 10}} /> 
+                        </button>
                         :
                         step === 1?
                         <>
-                            <button className='button' style={{width:240, backgroundColor: '#6C63FF', borderColor: '#6C63FF', outlineColor: '#6C63FF', marginTop:20, marginRight:20 }} onClick={ () => skipNextStep(0) } > <Icon.ArrowLeftCircle style={{marginRight: 10}} /> Passo anterior </button>
-                            <button className='button' style={{width:240, backgroundColor: '#6C63FF', borderColor: '#6C63FF', outlineColor: '#6C63FF', marginTop:20 }} onClick={ () => skipNextStep(2) } > Proximo passo <Icon.ArrowRightCircle style={{marginLeft: 10}} /> </button>
+                            <button 
+                                className='button' 
+                                style={{
+                                    width:240, 
+                                    backgroundColor: '#6C63FF', 
+                                    borderColor: '#6C63FF', 
+                                    outlineColor: '#6C63FF', 
+                                    marginTop:20, 
+                                    marginRight:20 }} 
+                                    onClick={ () => skipNextStep(0) } 
+                            >   
+                                <Icon.ArrowLeftCircle style={{marginRight: 10}} /> 
+                                Passo anterior 
+                            </button>
+                            
+                            <button 
+                                className='button' 
+                                style={{
+                                    width:240, 
+                                    backgroundColor: '#6C63FF', 
+                                    borderColor: '#6C63FF', 
+                                    outlineColor: '#6C63FF', 
+                                    marginTop:20 }} 
+                                onClick={ () => skipNextStep(2) } 
+                            > 
+                                Proximo passo 
+                                <Icon.ArrowRightCircle style={{marginLeft: 10}} /> 
+                            </button>
                         </>
                         :
                         <>
-                            <button className='button' style={{width:240, backgroundColor: '#6C63FF', borderColor: '#6C63FF', outlineColor: '#6C63FF', marginTop:20, marginRight:20 }} onClick={ () => skipNextStep(1) } > <Icon.ArrowLeftCircle style={{marginRight: 10}} /> Passo anterior </button>
-                            <button className='button' style={{width:240, backgroundColor: '#6C63FF', borderColor: '#6C63FF', outlineColor: '#6C63FF', marginTop:20 }} onClick={ () => jumpForApp() } > Ir para a aplicação <Icon.Clock style={{marginLeft: 10}} /> </button>
+                            <button 
+                                className='button' 
+                                style={{
+                                    width:240, 
+                                    backgroundColor: '#6C63FF', 
+                                    borderColor: '#6C63FF', 
+                                    outlineColor: '#6C63FF', 
+                                    marginTop:20, 
+                                    marginRight:20 }} 
+                                onClick={ () => skipNextStep(1) } 
+                            > 
+                                <Icon.ArrowLeftCircle style={{marginRight: 10}} /> 
+                                Passo anterior 
+                            </button>
+
+                            <button 
+                                className='button' 
+                                style={{
+                                    width:240, 
+                                    backgroundColor: '#6C63FF', 
+                                    borderColor: '#6C63FF', 
+                                    outlineColor: '#6C63FF', 
+                                    marginTop:20 }} 
+                                onClick={ () => jumpForApp() } 
+                            >
+                                Ir para a aplicação 
+                                <Icon.Clock style={{marginLeft: 10}} /> 
+                            </button>
                         </>
                     }
                 </div>
