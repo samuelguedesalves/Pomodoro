@@ -41,7 +41,7 @@ function Welcome ({ FocusedWork }){
                             margin: "15px auto",
                         }} 
                     onClick={ goToSteps } 
-                    >Iniciar <Icon.ArrowRightCircle style={{marginLeft: 10}} /> </button>
+                    >Iniciar <Icon.ArrowRightCircle size="4vh" style={{marginLeft: 10}} /> </button>
                 </animated.div>
 
             </div>

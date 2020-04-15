@@ -138,7 +138,7 @@ function FirstSteps ({ UndrawTask, OfficeWork, DrinkCoffee }) {
                                     marginRight:20 }} 
                                     onClick={ () => skipNextStep(0) } 
                             >   
-                                <Icon.ArrowLeftCircle style={{marginRight: 10}} /> 
+                                <Icon.ArrowLeftCircle size="4vh" style={{marginRight: 10}} /> 
                                 Passo anterior 
                             </button>
                             
@@ -153,7 +153,7 @@ function FirstSteps ({ UndrawTask, OfficeWork, DrinkCoffee }) {
                                 onClick={ () => skipNextStep(2) } 
                             > 
                                 Proximo passo 
-                                <Icon.ArrowRightCircle style={{marginLeft: 10}} /> 
+                                <Icon.ArrowRightCircle size="4vh" style={{marginLeft: 10}} /> 
                             </button>
                         </>
                         :
@@ -169,7 +169,7 @@ function FirstSteps ({ UndrawTask, OfficeWork, DrinkCoffee }) {
                                     marginRight:20 }} 
                                 onClick={ () => skipNextStep(1) } 
                             > 
-                                <Icon.ArrowLeftCircle style={{marginRight: 10}} /> 
+                                <Icon.ArrowLeftCircle size="4vh" style={{marginRight: 10}} /> 
                                 Passo anterior 
                             </button>
 
@@ -184,7 +184,7 @@ function FirstSteps ({ UndrawTask, OfficeWork, DrinkCoffee }) {
                                 onClick={ () => jumpForApp() } 
                             >
                                 Ir para a aplicação 
-                                <Icon.Clock style={{marginLeft: 10}} /> 
+                                <Icon.Clock size="4vh" style={{marginLeft: 10}} /> 
                             </button>
                         </>
                     }
