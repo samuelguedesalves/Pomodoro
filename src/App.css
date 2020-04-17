@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:600,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 *{
-  font-family: 'Nunito';
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: bold;
@@ -23,12 +23,12 @@
 
 .button{
   width: auto;
-  border-radius: 1vh;
+  border-radius: 5px;
   border: none;
   background-color: #6C63FF;
   color: #fff;
-  height: 8vh;
-  font-size: 3vh;
+  height: 50px;
+  font-size: 20px;
   outline: none;
   
   display: flex;
@@ -50,4 +50,22 @@
   align-items: center;
   justify-content: center;
   margin-top: 70px;
+}
+
+.fadeInContainer{
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
 }

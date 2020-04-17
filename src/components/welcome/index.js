@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring';
 
 //Icons components
 import * as Icon from 'react-feather';
@@ -12,8 +11,6 @@ import './style.css';
 //import FocusedWork from '../../assets/focused_working.png';
 
 function Welcome ({ FocusedWork }){
-    
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
     const history = useHistory();
     
     function goToSteps(){
@@ -23,14 +20,14 @@ function Welcome ({ FocusedWork }){
     return (
       <>
         <div className="content">
-            <animated.img style={props} src={FocusedWork} alt="Pomodoro"/>
-            <div className="welcome"  >
-                <animated.p style={props} className="text">
+            <img className="fadeInContainer" style={{width: 540}} src={FocusedWork} alt="Pomodoro"/>
+            <div className="welcome">
+                <p className="text">
                     A técnica Pomodoro foi criada em 1980 por Francesco Cirillo, está técnica envolve o gerenciamento de tempo e tem como objetivo optimozar sua produtividade ou aprendizado, intercalando descansos de 5 minutos a cada 
                     25 minutos de trabalho.
-                </animated.p>
+                </p>
                 
-                <animated.div style={props} >
+                <div >
                     <button
                     className="button" 
                     style={
@@ -41,8 +38,8 @@ function Welcome ({ FocusedWork }){
                             margin: "15px auto",
                         }} 
                     onClick={ goToSteps } 
-                    >Iniciar <Icon.ArrowRightCircle size="4vh" style={{marginLeft: 10}} /> </button>
-                </animated.div>
+                    >Iniciar <Icon.ArrowRightCircle size={24} style={{marginLeft: 10}} /> </button>
+                </div>
 
             </div>
         </div>

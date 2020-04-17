@@ -61,7 +61,7 @@ function Application ({ showSprintHappyBanner }) {
 
     return (
         <>
-            <div className="application">
+            <div className="application fadeInContainer">
                 <div className="timer">
                     <svg width="300" height="300" className="canvasCircle" >
                         <circle className="circle" style={ {strokeDashoffset: `${strokeOffset}` } } cx="150" cy="150" r="140" stroke="#4E49A9" strokeLinecap="round" strokeWidth={20} fillOpacity="0" />

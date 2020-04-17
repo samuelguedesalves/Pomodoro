@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 
 import { useHistory } from 'react-router-dom';
 
-import { animated, useSpring } from 'react-spring';
-
 //Icons components
 import * as Icon from 'react-feather';
 
@@ -21,9 +19,6 @@ import LevelSteps2 from '../../assets/level_steps_2.svg';
 function FirstSteps ({ UndrawTask, OfficeWork, DrinkCoffee }) {
     const [step, setStep] = useState(0);
 
-    //React Spring
-    const props = useSpring({opacity: 1, from: {opacity: 0}})
-
     const history = useHistory();
 
     function skipNextStep(button_step){
@@ -38,12 +33,12 @@ function FirstSteps ({ UndrawTask, OfficeWork, DrinkCoffee }) {
         <div className="container">
 
             {step=== 0?
-                    <animated.img className="image-slide" style={props} src={UndrawTask} alt="Undraw Task"/>
+                    <img className="image-slide fadeInContainer" src={UndrawTask} alt="Undraw Task"/>
             :
                 step=== 1? 
-                    <animated.img className="image-slide" style={props} src={OfficeWork} alt="Office Work"/>
+                    <img className="image-slide fadeInContainer" src={OfficeWork} alt="Office Work"/>
                 :
-                    <animated.img className="image-slide" style={props} src={DrinkCoffee} alt="Drink a Coffee"/>
+                    <img className="image-slide" src={DrinkCoffee} alt="Drink a Coffee"/>
             }
 
             <div className="guide">

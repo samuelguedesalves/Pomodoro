@@ -1,15 +1,12 @@
 //-----------------MODULES DEPENDENCES-----------------------------------------
 import React, {useState} from 'react';
 
-import { useSpring, animated } from 'react-spring';
-
 import { 
     BrowserRouter as Router, 
     Switch, 
     Route, 
     BrowserRouter, 
-    Redirect,
-    useHistory
+    Redirect
 } from 'react-router-dom';
 
 
@@ -41,8 +38,6 @@ import DrinkCoffee from './assets/drinkACoffee.png';
 
 
 function App () {
-    const props = useSpring({opacity: 1, from: {opacity: 0}});
-
     const [sprintHappy, setSprintHappy] = useState(false);
 
     function showSprintHappyBanner(state){
@@ -52,15 +47,14 @@ function App () {
     return (<>
         
         { sprintHappy ? 
-            <animated.div 
-                style={props} 
+            <div
                 className="happyContainer" 
                 onClick={() => showSprintHappyBanner(false)} 
             >
                 <div className="center">
                     <img src={happyImg} alt=""/>
                 </div>
-            </animated.div>
+            </div>
             : 
             <></>
         }
