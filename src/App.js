@@ -6,8 +6,10 @@ import {
     Switch, 
     Route, 
     BrowserRouter, 
-    Redirect
+    Redirect,
 } from 'react-router-dom';
+
+import * as Icon from "react-feather";
 
 
 //------------------CSS IMPORTS------------------------------------------------
@@ -19,8 +21,8 @@ import './App.css';
 //welcome component
 import Welcome from './components/welcome/index';
 
-//Steps componet
-import FirstSteps from './components/firt-steps/index';
+//step model component
+import ModelSteps from './components/steps/stepsModel'
 
 //Aplication component
 import Application from './components/application/index';
@@ -35,6 +37,11 @@ import FocusedWork from './assets/focused_working.png';
 import UndrawTask from './assets/undraw_task.png';
 import OfficeWork from './assets/office_work.png';
 import DrinkCoffee from './assets/drinkACoffee.png';
+
+import LevelSteps from './assets/level_steps.svg';
+import LevelSteps1 from './assets/level_steps_1.svg';
+import LevelSteps2 from './assets/level_steps_2.svg';
+
 
 
 function App () {
@@ -77,12 +84,82 @@ function App () {
                             <Welcome FocusedWork={FocusedWork} />
                         </Route>
 
-                        <Route path='/steps'>
-                            <FirstSteps 
-                                UndrawTask={UndrawTask} 
-                                OfficeWork={OfficeWork}
-                                DrinkCoffee={DrinkCoffee}
+                        <Route path = "/first-step">
+                            <ModelSteps
+                                imgSrc={UndrawTask} 
+                                imgAlt={"Undraw Task"} 
+                                imgSrcStepView={LevelSteps} 
+                                textStep={
+                                    `
+                                        Primeiro faça uma lista das tarefas
+                                        que deveram ser realizadas. Organização
+                                        é muito importante, economiza tempo e
+                                        energia durante o trabalho.
+                                    `
+                                } 
+                                textTips={
+                                    `
+                                        Importante: se a tarefa que for realizar for muito complexa ou grande tente subdividi-la
+                                    `
+                                } 
+                                firstButton={"Próximo"}
+                                secondButton={false}
+                                previousRoute={"/second-step"}
+                                iconFirstButton={<Icon.ArrowRightCircle size="30px" style={{marginLeft: 10}} />}
                             />
+                        </Route>
+
+                        <Route path='/second-step'>
+                            <ModelSteps
+                                imgSrc={OfficeWork} 
+                                imgAlt={"Office Work"} 
+                                imgSrcStepView={LevelSteps1} 
+                                textStep={
+                                    `
+                                        Agora com tudo organizado é hora de
+                                        colocar a mão na massa, se concentre
+                                        e faça sua tarefa durante os proximos
+                                        25 minutos.
+                                    `
+                                } 
+                                textTips={
+                                    `
+                                    Importante: Tente terminar sua tarefa dentros dos 25 minutos.
+                                    `
+                                } 
+                                firstButton={"Anterior"} 
+                                secondButton={"Proximo"}
+                                previousRoute={"/first-step"}
+                                nextRoute={"/third-step"}
+                                iconFirstButton={<Icon.ArrowLeftCircle size="30px" style={{marginRight: 10}} /> }
+                                iconSecondButton={<Icon.ArrowRightCircle size="30px" style={{marginLeft: 10}} /> }
+                            />  
+                        </Route>
+                        
+                        <Route path='/third-step'>
+                            <ModelSteps
+                                imgSrc={DrinkCoffee} 
+                                imgAlt={"Drink Coffee"} 
+                                imgSrcStepView={LevelSteps2} 
+                                textStep={
+                                    `
+                                        A hora do descanso chegou!
+                                        após os 25 minutos trabalhados você
+                                        pode pausar durante os proximos 5 minutos, perfeito para um café.
+                                    `
+                                } 
+                                textTips={
+                                    `
+                                        Importante: Respire um ar fresco, faça um café e aproveite, a proxima pausa será só há 25 minutos.
+                                    `
+                                } 
+                                firstButton={"Anterior"} 
+                                secondButton={"Concluir"}
+                                previousRoute={"/second-step"}
+                                nextRoute={"/app"}
+                                iconFirstButton={<Icon.ArrowLeftCircle size="30px" style={{marginRight: 10}} />}
+                                iconSecondButton={ <Icon.Clock size="30px" style={{marginLeft: 10}} /> }
+                            />  
                         </Route>
                         
                         <Route path='/app'>

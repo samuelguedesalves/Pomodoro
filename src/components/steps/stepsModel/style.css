@@ -1,0 +1,73 @@
+.component-container{
+    margin: 0 auto;
+    width: 1280px;
+    min-width: 1280px;
+    /* background-color: #ff0000; */
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-container .image-block {
+    margin-right: 50px;
+    /* background-color: #00ff00; */
+}
+
+.view-step{
+    width: 400px;
+    height: 100%;
+    /* background-color: #00ff00; */
+}
+
+.view-step .section-tutorial{
+    height: 380px;
+    /* background-color: #ff00ea; */
+}
+
+.view-step .section-tutorial .skipe-tutorial {
+    float: right;
+}
+
+.view-step .section-tutorial .skipe-tutorial {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #6C63FF;
+    outline: none;
+    transition: ease-in 0.5s;
+}
+
+.view-step .section-tutorial .skipe-tutorial:hover {
+    filter: opacity(0.6);
+}
+
+.view-step .section-tutorial .step-view-image-block img{
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+.view-step .section-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-step .section-button button{
+    width: 47%;
+}
+
+.view-step .section-tutorial .text-step{
+    color: #333;
+}
+        
+.view-step .section-tutorial .text-step p{
+    font-size: 24px;
+}
+        
+.view-step .section-tutorial .text-step article{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #6C63FF;
+}

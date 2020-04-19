@@ -30,10 +30,17 @@
   height: 50px;
   font-size: 20px;
   outline: none;
+  cursor: pointer;
   
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: ease-in 0.5s;
+}
+
+.button:hover{
+  background-color: #534cd4;
 }
 
 .happyContainer{

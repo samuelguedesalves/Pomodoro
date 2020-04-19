@@ -14,7 +14,7 @@ function Welcome ({ FocusedWork }){
     const history = useHistory();
     
     function goToSteps(){
-        history.push('/steps');
+        history.push('/first-step');
     }
 
     return (
@@ -33,7 +33,6 @@ function Welcome ({ FocusedWork }){
                     style={
                         {
                             width:240, 
-                            backgroundColor: '#6C63FF', 
                             fontWeight: 'bold',
                             margin: "15px auto",
                         }} 
