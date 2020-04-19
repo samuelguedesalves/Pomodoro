@@ -153,7 +153,7 @@ function App () {
                                         Importante: Respire um ar fresco, faça um café e aproveite, a proxima pausa será só há 25 minutos.
                                     `
                                 } 
-                                firstButton={"Anterior"} 
+                                firstButton={"Anterior"}
                                 secondButton={"Concluir"}
                                 previousRoute={"/second-step"}
                                 nextRoute={"/app"}

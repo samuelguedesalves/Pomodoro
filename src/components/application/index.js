@@ -8,6 +8,8 @@ import './style.css';
 function Application ({ showSprintHappyBanner }) {
     const [minute, setMinute] = useState(0);
     const [seconds, setSeconds] = useState(0);
+    const [sprints, setSprints] = useState(0);
+
     const [state, setState] = useState(false);
     const [strokeOffset, setStrokeOffset] = useState(1500);
     const [clean,setClean] = useState(false);
@@ -18,11 +20,12 @@ function Application ({ showSprintHappyBanner }) {
                 setTimeout(()=>{
                     setSeconds( seconds + 1 );
                     setStrokeOffset( strokeOffset - 1.13 );
-                }, 1000);
+                }, 50);
             }else{
                 if( minute === 24 ){
                     setState(false);
                     showSprintHappyBanner(true);
+                    completeSprint();
                     resetTimer();
                 }
                 setMinute(minute + 1);
@@ -59,6 +62,10 @@ function Application ({ showSprintHappyBanner }) {
         setClean(true);
     }
 
+    function completeSprint(){
+        setSprints(sprints+1);
+    }
+
     return (
         <>
             <div className="application fadeInContainer">
@@ -78,7 +85,7 @@ function Application ({ showSprintHappyBanner }) {
                     <div className="sprintsCounter">
                         <h5>Sprints</h5>
                         <div className="counter">
-                            <h5>0</h5>
+                            <h5>{sprints}</h5>
                         </div>
                     </div>
 

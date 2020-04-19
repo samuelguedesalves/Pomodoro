@@ -19,8 +19,8 @@ function Welcome ({ FocusedWork }){
 
     return (
       <>
-        <div className="content">
-            <img className="fadeInContainer" style={{width: 540}} src={FocusedWork} alt="Pomodoro"/>
+        <div className="content fadeInContainer">
+            <img style={{width: 540}} src={FocusedWork} alt="Pomodoro"/>
             <div className="welcome">
                 <p className="text">
                     A técnica Pomodoro foi criada em 1980 por Francesco Cirillo, está técnica envolve o gerenciamento de tempo e tem como objetivo optimozar sua produtividade ou aprendizado, intercalando descansos de 5 minutos a cada 
