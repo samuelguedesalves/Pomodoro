@@ -20,7 +20,7 @@ function Application ({ showSprintHappyBanner }) {
                 setTimeout(()=>{
                     setSeconds( seconds + 1 );
                     setStrokeOffset( strokeOffset - 1.13 );
-                }, 50);
+                }, 1000);
             }else{
                 if( minute === 24 ){
                     setState(false);
